@@ -4,5 +4,7 @@ reports/
 *.log
 .maestro/cache/
 window_dump.xml
+allure-results/
+allure-report/
 .DS_Store
 Thumbs.db

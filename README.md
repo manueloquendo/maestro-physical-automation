@@ -51,6 +51,22 @@ El documento compartido contiene 10 casos de prueba. Este proyecto incluye esos 
 .\scripts\init-github-repo.ps1 -RemoteUrl "https://github.com/ORG/REPO.git"
 ```
 
+8. Genera el reporte Allure con screenshots de fallos:
+
+```powershell
+.\scripts\generate-allure-report.ps1 -Open
+```
+
+## Reporte Allure
+
+Maestro captura screenshots automaticamente solo para los pasos que fallan (no genera video en dispositivos sin el binario `screenrecord`, comun en algunos Android con firmware restringido). El script `run-maestro.ps1` ya corre cada suite con `--debug-output`, y `generate-allure-report.ps1`:
+
+1. Instala Allure Commandline via npm si no esta disponible.
+2. Convierte el JUnit XML de Maestro mas los screenshots de fallo en resultados Allure (`allure-results/`).
+3. Genera el reporte HTML en `allure-report/` y lo abre con `-Open`.
+
+Requiere Node.js. Si el dispositivo si soporta `screenrecord`, los videos grabados con `startRecording`/`stopRecording` tambien se adjuntan automaticamente al reporte.
+
 ## Estructura
 
 ```text

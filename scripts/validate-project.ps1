@@ -11,7 +11,10 @@ $requiredFiles = @(
     "scripts/check-android-device.ps1",
     "scripts/init-github-repo.ps1",
     "scripts/install-maestro-windows.ps1",
-    "scripts/run-maestro.ps1"
+    "scripts/run-maestro.ps1",
+    "scripts/generate-allure-results.js",
+    "scripts/generate-allure-report.ps1",
+    ".maestro/config.yaml"
 )
 
 $missingFiles = @()

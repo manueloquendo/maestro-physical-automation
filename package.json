@@ -6,7 +6,8 @@
   "scripts": {
     "validate": "powershell -ExecutionPolicy Bypass -File ./scripts/validate-project.ps1",
     "check:android": "powershell -ExecutionPolicy Bypass -File ./scripts/check-android-device.ps1",
-    "test:maestro": "powershell -ExecutionPolicy Bypass -File ./scripts/run-maestro.ps1"
+    "test:maestro": "powershell -ExecutionPolicy Bypass -File ./scripts/run-maestro.ps1",
+    "report:allure": "powershell -ExecutionPolicy Bypass -File ./scripts/generate-allure-report.ps1 -Open"
   },
   "engines": {
     "node": ">=20"
