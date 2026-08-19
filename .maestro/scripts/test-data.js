@@ -1,8 +1,10 @@
 output.validEmail = "ashutosh@tepia.co";
 output.invalidEmail = "invalid-email";
 output.unregisteredEmail = "manuel@tapia.com";
-output.validPassword = "Password123!";
 output.incorrectPassword = "WrongPassword123!";
+// Real account password is injected via the TEST_USER_PASSWORD env var (see .env), never hardcoded here.
+output.validPassword = TEST_USER_PASSWORD;
+output.newAccountPassword = "NewAccount@123";
 
 output.businessName = "Tepia Test Store";
 output.firstName = "Automation";

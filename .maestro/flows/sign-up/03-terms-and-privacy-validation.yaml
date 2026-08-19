@@ -21,10 +21,10 @@ tags:
 - inputText: ${output.validEmail}
 - hideKeyboard
 - tapOn: "Password"
-- inputText: ${output.validPassword}
+- inputText: ${output.newAccountPassword}
 - hideKeyboard
 - tapOn: "Confirm Password"
-- inputText: ${output.validPassword}
+- inputText: ${output.newAccountPassword}
 - hideKeyboard
 - tapOn: "Mobile Phone"
 - inputText: ${output.phone}

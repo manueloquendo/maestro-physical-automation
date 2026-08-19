@@ -20,9 +20,21 @@ if (-not (Get-Command maestro -ErrorAction SilentlyContinue)) {
 
 . "$PSScriptRoot\check-android-device.ps1"
 
+if (Test-Path ".env") {
+    Get-Content ".env" | ForEach-Object {
+        if ($_ -match '^\s*([^#=]+)=(.*)$') {
+            [Environment]::SetEnvironmentVariable($Matches[1].Trim(), $Matches[2].Trim(), "Process")
+        }
+    }
+}
+
+if ([string]::IsNullOrWhiteSpace($env:TEST_USER_PASSWORD)) {
+    throw "TEST_USER_PASSWORD is required. Set it in .env (see .env.example)."
+}
+
 $env:APP_ID = $AppId
 $reportDir = "reports\maestro"
 New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
 
 Write-Host "Running Maestro flows at '$FlowPath' for APP_ID '$AppId'."
-maestro test $FlowPath -e APP_ID=$AppId --format junit --output "$reportDir\junit.xml"
+maestro test $FlowPath -e APP_ID=$AppId -e TEST_USER_PASSWORD=$env:TEST_USER_PASSWORD --format junit --output "$reportDir\junit.xml"
