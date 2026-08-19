@@ -1,0 +1,17 @@
+appId: ${APP_ID}
+tags:
+  - mobile
+  - android
+  - signin
+  - negative
+  - regression
+---
+- launchApp:
+    clearState: true
+- runScript: ../../scripts/test-data.js
+- assertVisible: "Email Address"
+- assertVisible: "Password"
+- assertVisible: "Sign In"
+- tapOn: "Sign In"
+- assertVisible: "An email address is required"
+- assertVisible: "Password is required"

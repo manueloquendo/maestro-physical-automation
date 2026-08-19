@@ -1,0 +1,20 @@
+appId: ${APP_ID}
+tags:
+  - mobile
+  - android
+  - forgot-password
+  - negative
+  - regression
+---
+- launchApp:
+    clearState: true
+- runScript: ../../scripts/test-data.js
+- tapOn: "Forgot Email or Password"
+- assertVisible: "Submit"
+- tapOn: "Submit"
+- assertVisible: "An email address is required"
+- tapOn: "Email Address"
+- inputText: ${output.invalidEmail}
+- hideKeyboard
+- tapOn: "Submit"
+- assertVisible: "The email format is invalid."

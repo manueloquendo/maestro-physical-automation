@@ -1,0 +1,7 @@
+node_modules/
+.env
+reports/
+*.log
+.maestro/cache/
+.DS_Store
+Thumbs.db

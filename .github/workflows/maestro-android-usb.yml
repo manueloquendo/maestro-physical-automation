@@ -1,0 +1,58 @@
+name: Maestro Android USB CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  maestro-android-usb:
+    name: Run Maestro on Android USB device
+    runs-on:
+      - self-hosted
+      - Windows
+      - Android
+      - USB
+    timeout-minutes: 45
+    env:
+      APP_ID: ${{ vars.APP_ID }}
+      MAESTRO_DRIVER_STARTUP_TIMEOUT: 60000
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate project scaffold
+        shell: powershell
+        run: .\scripts\validate-project.ps1
+
+      - name: Verify Android USB device
+        shell: powershell
+        run: .\scripts\check-android-device.ps1
+
+      - name: Run Maestro flows
+        shell: powershell
+        run: .\scripts\run-maestro.ps1 -AppId "$env:APP_ID"
+
+      - name: Upload Maestro reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maestro-reports
+          path: reports/maestro
+          if-no-files-found: warn

@@ -1,0 +1,16 @@
+appId: ${APP_ID}
+tags:
+  - mobile
+  - android
+  - signin
+  - negative
+  - regression
+---
+- launchApp:
+    clearState: true
+- runScript: ../../scripts/test-data.js
+- tapOn: "Email Address"
+- inputText: ${output.invalidEmail}
+- hideKeyboard
+- tapOn: "Sign In"
+- assertVisible: "The email format is invalid."

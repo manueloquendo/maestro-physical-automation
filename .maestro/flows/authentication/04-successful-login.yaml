@@ -1,0 +1,20 @@
+appId: ${APP_ID}
+tags:
+  - mobile
+  - android
+  - signin
+  - positive
+  - smoke
+---
+- launchApp:
+    clearState: true
+- runScript: ../../scripts/test-data.js
+- tapOn: "Email Address"
+- inputText: ${output.validEmail}
+- tapOn: "Password"
+- inputText: ${output.validPassword}
+- hideKeyboard
+- tapOn: "Sign In"
+- extendedWaitUntil:
+    visible: "MyStore"
+    timeout: 15000

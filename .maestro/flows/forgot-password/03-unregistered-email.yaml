@@ -1,0 +1,24 @@
+appId: ${APP_ID}
+tags:
+  - mobile
+  - android
+  - forgot-password
+  - negative
+  - regression
+---
+- launchApp:
+    clearState: true
+- runScript: ../../scripts/test-data.js
+- tapOn: "Forgot Email or Password"
+- assertVisible: "Submit"
+- tapOn: "Email Address"
+- inputText: ${output.unregisteredEmail}
+- hideKeyboard
+- tapOn: "Submit"
+- extendedWaitUntil:
+    visible: "Unable to Send Reset Email"
+    timeout: 15000
+- assertVisible: "We could not send a password reset email"
+- tapOn: "OK"
+- tapOn: "Cancel"
+- assertVisible: "Sign In"

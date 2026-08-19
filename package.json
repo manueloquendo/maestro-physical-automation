@@ -1,0 +1,14 @@
+{
+  "name": "maestro-mobile-android-usb-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Maestro mobile automation project for Android physical devices over USB.",
+  "scripts": {
+    "validate": "powershell -ExecutionPolicy Bypass -File ./scripts/validate-project.ps1",
+    "check:android": "powershell -ExecutionPolicy Bypass -File ./scripts/check-android-device.ps1",
+    "test:maestro": "powershell -ExecutionPolicy Bypass -File ./scripts/run-maestro.ps1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
