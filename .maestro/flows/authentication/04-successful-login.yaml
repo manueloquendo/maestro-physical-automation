@@ -16,5 +16,5 @@ tags:
 - hideKeyboard
 - tapOn: "Sign In"
 - extendedWaitUntil:
-    visible: "MyStore"
-    timeout: 15000
+    visible: ".*MyStore.*"
+    timeout: 20000

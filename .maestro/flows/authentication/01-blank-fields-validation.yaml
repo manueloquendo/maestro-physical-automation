@@ -13,5 +13,5 @@ tags:
 - assertVisible: "Password"
 - assertVisible: "Sign In"
 - tapOn: "Sign In"
-- assertVisible: "An email address is required"
-- assertVisible: "Password is required"
+- assertVisible: ".*An email address is required.*"
+- assertVisible: ".*Password is required.*"

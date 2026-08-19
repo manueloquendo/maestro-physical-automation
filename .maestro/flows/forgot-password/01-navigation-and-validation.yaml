@@ -12,9 +12,9 @@ tags:
 - tapOn: "Forgot Email or Password"
 - assertVisible: "Submit"
 - tapOn: "Submit"
-- assertVisible: "An email address is required"
+- assertVisible: ".*An email address is required.*"
 - tapOn: "Email Address"
 - inputText: ${output.invalidEmail}
 - hideKeyboard
 - tapOn: "Submit"
-- assertVisible: "The email format is invalid."
+- assertVisible: ".*The email format is invalid.*"

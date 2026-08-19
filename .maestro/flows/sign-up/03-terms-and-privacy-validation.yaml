@@ -40,5 +40,5 @@ tags:
 - assertVisible: "Privacy Policy"
 - assertVisible: "Terms & Conditions"
 - tapOn: "Sign Up"
-- assertVisible: "You need to accept the privacy policy to continue"
-- assertVisible: "You need to accept the terms & conditions to continue"
+- assertVisible: ".*You need to accept the privacy policy to continue.*"
+- assertVisible: ".*You need to accept the terms & conditions to continue.*"

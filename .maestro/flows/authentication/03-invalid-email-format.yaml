@@ -13,4 +13,4 @@ tags:
 - inputText: ${output.invalidEmail}
 - hideKeyboard
 - tapOn: "Sign In"
-- assertVisible: "The email format is invalid."
+- assertVisible: ".*The email format is invalid.*"

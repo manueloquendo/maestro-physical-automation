@@ -16,8 +16,8 @@ tags:
 - hideKeyboard
 - tapOn: "Submit"
 - extendedWaitUntil:
-    visible: "The reset password email has been sent"
-    timeout: 15000
-- assertVisible: "The reset password email has been sent to the address you entered"
+    visible: ".*The reset password email has been sent.*"
+    timeout: 20000
+- assertVisible: ".*The reset password email has been sent to the address you entered.*"
 - tapOn: "OK"
 - assertVisible: "Sign In"

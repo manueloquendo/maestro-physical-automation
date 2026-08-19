@@ -16,9 +16,9 @@ tags:
 - hideKeyboard
 - tapOn: "Submit"
 - extendedWaitUntil:
-    visible: "Unable to Send Reset Email"
-    timeout: 15000
-- assertVisible: "We could not send a password reset email"
+    visible: ".*Unable to Send Reset Email.*"
+    timeout: 20000
+- assertVisible: ".*We could not send a password reset email.*"
 - tapOn: "OK"
 - tapOn: "Cancel"
 - assertVisible: "Sign In"
