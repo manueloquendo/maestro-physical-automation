@@ -20,6 +20,7 @@ jobs:
     timeout-minutes: 45
     env:
       APP_ID: ${{ vars.APP_ID }}
+      TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
       MAESTRO_DRIVER_STARTUP_TIMEOUT: 60000
 
     steps:
@@ -48,6 +49,19 @@ jobs:
       - name: Run Maestro flows
         shell: powershell
         run: .\scripts\run-maestro.ps1 -AppId "$env:APP_ID"
+
+      - name: Generate Allure report
+        if: always()
+        shell: powershell
+        run: .\scripts\generate-allure-report.ps1
+
+      - name: Upload Allure report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+          if-no-files-found: warn
 
       - name: Upload Maestro reports
         if: always()

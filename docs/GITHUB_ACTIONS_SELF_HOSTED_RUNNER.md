@@ -20,6 +20,7 @@ En GitHub:
 2. Entra en Secrets and variables > Actions.
 3. Abre la pestana Variables.
 4. Crea `APP_ID` con el package name Android, por ejemplo `com.tuempresa.foodapp`.
+5. Abre la pestana Secrets y crea `TEST_USER_PASSWORD` con la contrasena real de la cuenta de prueba. Nunca la pongas en Variables (texto plano visible), solo en Secrets.
 
 ## 3. Instalar el self-hosted runner
 
@@ -67,5 +68,6 @@ El job realiza:
 3. Setup de Node.js 20.
 4. Validacion del scaffold.
 5. Verificacion del dispositivo Android USB.
-6. Ejecucion de `maestro test`.
-7. Publicacion de reportes como artifacts.
+6. Ejecucion de `maestro test` con capturas automaticas en fallos.
+7. Generacion del reporte Allure.
+8. Publicacion del reporte Allure y de los reportes de Maestro como artifacts.
