@@ -15,3 +15,4 @@ tags:
 - tapOn: "Sign In"
 - assertVisible: ".*An email address is required.*"
 - assertVisible: ".*Password is required.*"
+- stopApp: ${APP_ID}

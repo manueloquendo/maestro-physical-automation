@@ -42,3 +42,4 @@ tags:
 - tapOn: "Sign Up"
 - assertVisible: ".*You need to accept the privacy policy to continue.*"
 - assertVisible: ".*You need to accept the terms & conditions to continue.*"
+- stopApp: ${APP_ID}

@@ -9,7 +9,7 @@ tags:
 - launchApp:
     clearState: true
 - runScript: ../../scripts/test-data.js
-- tapOn: "Forgot Email or Password"
+- tapOn: "Forgot Email/Password"
 - assertVisible: "Submit"
 - tapOn: "Submit"
 - assertVisible: ".*An email address is required.*"
@@ -18,3 +18,4 @@ tags:
 - hideKeyboard
 - tapOn: "Submit"
 - assertVisible: ".*The email format is invalid.*"
+- stopApp: ${APP_ID}

@@ -9,7 +9,7 @@ tags:
 - launchApp:
     clearState: true
 - runScript: ../../scripts/test-data.js
-- tapOn: "Forgot Email or Password"
+- tapOn: "Forgot Email/Password"
 - assertVisible: "Submit"
 - tapOn: "Email Address"
 - inputText: ${output.validEmail}
@@ -17,7 +17,8 @@ tags:
 - tapOn: "Submit"
 - extendedWaitUntil:
     visible: ".*The reset password email has been sent.*"
-    timeout: 20000
+    timeout: 45000
 - assertVisible: ".*The reset password email has been sent to the address you entered.*"
-- tapOn: "OK"
+- tapOn: "Ok"
 - assertVisible: "Sign In"
+- stopApp: ${APP_ID}

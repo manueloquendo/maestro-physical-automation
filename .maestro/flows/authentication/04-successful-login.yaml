@@ -18,3 +18,4 @@ tags:
 - extendedWaitUntil:
     visible: ".*MyStore.*"
     timeout: 20000
+- stopApp: ${APP_ID}

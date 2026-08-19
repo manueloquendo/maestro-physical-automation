@@ -14,3 +14,4 @@ tags:
 - hideKeyboard
 - tapOn: "Sign In"
 - assertVisible: ".*The email format is invalid.*"
+- stopApp: ${APP_ID}

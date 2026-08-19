@@ -25,3 +25,4 @@ tags:
 - assertVisible: ".*A City is required.*"
 - assertVisible: ".*A State is required.*"
 - assertVisible: ".*A Zip is required.*"
+- stopApp: ${APP_ID}
