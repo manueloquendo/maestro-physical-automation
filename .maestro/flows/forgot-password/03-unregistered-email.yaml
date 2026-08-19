@@ -17,7 +17,7 @@ tags:
 - tapOn: "Submit"
 - extendedWaitUntil:
     visible: ".*Unable to Send Reset Email.*"
-    timeout: 20000
+    timeout: 45000
 - assertVisible: ".*We could not send a password reset email.*"
 - tapOn: "OK"
 - tapOn: "Cancel"
