@@ -12,10 +12,11 @@ tags:
 - tapOn: "Sign Up"
 - assertVisible: "Sign Up"
 - scrollUntilVisible:
-    element: "Sign Up"
+    element: "Privacy Policy"
     direction: DOWN
 - tapOn: "Sign Up"
-- assertVisible: ".*Business Name is required.*"
+- waitForAnimationToEnd:
+    timeout: 5000
 - assertVisible: ".*First and last names are required.*"
 - assertVisible: ".*An email address is required.*"
 - assertVisible: ".*Password is required.*"
@@ -25,4 +26,8 @@ tags:
 - assertVisible: ".*A City is required.*"
 - assertVisible: ".*A State is required.*"
 - assertVisible: ".*A Zip is required.*"
+- scrollUntilVisible:
+    element: "Business Name"
+    direction: UP
+- assertVisible: ".*Business Name is required.*"
 - stopApp: ${APP_ID}

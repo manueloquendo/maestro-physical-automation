@@ -13,33 +13,42 @@ tags:
 - assertVisible: "Sign Up"
 - tapOn: "Business Name"
 - inputText: ${output.businessName}
-- tapOn: "First Name"
-- inputText: ${output.firstName}
-- tapOn: "Last Name"
-- inputText: ${output.lastName}
-- tapOn: "Email Address"
+- hideKeyboard
+- tapOn: "First & Last Name"
+- inputText: ${output.fullName}
+- hideKeyboard
+- tapOn: "Email"
 - inputText: ${output.validEmail}
+- hideKeyboard
 - tapOn: "Password"
 - inputText: ${output.validPassword}
+- hideKeyboard
 - tapOn: "Confirm Password"
 - inputText: ${output.validPassword}
-- tapOn: "Phone"
+- hideKeyboard
+- tapOn: "Mobile Phone"
 - inputText: ${output.phone}
-- tapOn: "Address"
+- hideKeyboard
+- tapOn: "Address 01"
 - inputText: ${output.address}
+- hideKeyboard
 - tapOn: "City"
 - inputText: ${output.city}
+- hideKeyboard
 - tapOn: "State"
 - inputText: ${output.state}
+- hideKeyboard
 - tapOn: "Zip"
 - inputText: ${output.zip}
 - hideKeyboard
 - scrollUntilVisible:
-    element: "Sign Up"
+    element: "Privacy Policy"
     direction: DOWN
 - assertVisible: "Privacy Policy"
 - assertVisible: "Terms & Conditions"
 - tapOn: "Sign Up"
+- waitForAnimationToEnd:
+    timeout: 5000
 - assertVisible: ".*You need to accept the privacy policy to continue.*"
 - assertVisible: ".*You need to accept the terms & conditions to continue.*"
 - stopApp: ${APP_ID}
