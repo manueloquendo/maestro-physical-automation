@@ -20,4 +20,4 @@ $reportDir = "reports\maestro"
 New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
 
 Write-Host "Running Maestro flows at '$FlowPath' for APP_ID '$AppId'."
-maestro test $FlowPath --format junit --output "$reportDir\junit.xml"
+maestro test $FlowPath -e APP_ID=$AppId --format junit --output "$reportDir\junit.xml"
