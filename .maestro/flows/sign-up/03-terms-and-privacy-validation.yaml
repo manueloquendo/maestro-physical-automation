@@ -46,6 +46,9 @@ tags:
     direction: DOWN
 - assertVisible: "Privacy Policy"
 - assertVisible: "Terms & Conditions"
+- scrollUntilVisible:
+    element: "Sign Up"
+    direction: DOWN
 - tapOn: "Sign Up"
 - waitForAnimationToEnd:
     timeout: 5000

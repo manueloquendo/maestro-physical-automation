@@ -10,6 +10,11 @@ if ([string]::IsNullOrWhiteSpace($AppId)) {
 }
 
 if (-not (Get-Command maestro -ErrorAction SilentlyContinue)) {
+    # New terminal sessions may not have picked up the PATH change from the installer yet.
+    $env:Path = [Environment]::GetEnvironmentVariable("Path", "User") + ";" + [Environment]::GetEnvironmentVariable("Path", "Machine")
+}
+
+if (-not (Get-Command maestro -ErrorAction SilentlyContinue)) {
     throw "Maestro CLI was not found in PATH. Install Maestro before running tests."
 }
 
